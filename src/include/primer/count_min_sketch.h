@@ -12,6 +12,7 @@
 
 #pragma once
 
+#include <atomic>
 #include <cstdint>
 #include <functional>
 #include <utility>
@@ -103,6 +104,7 @@ class CountMinSketch {
   }
 
   /** @todo (student) can add their data structures that support count-min sketch operations */
+  std::vector<std::atomic_uint32_t> table_;
 };
 
 }  // namespace bustub
