@@ -99,7 +99,7 @@ void CountMinSketch<KeyType>::Merge(const CountMinSketch<KeyType> &other) {
 template <typename KeyType>
 auto CountMinSketch<KeyType>::Count(const KeyType &item) const -> uint32_t {
   uint32_t min_count = UINT32_MAX;
-  for (size_t i =0;i<depth_;i++){
+  for (size_t i = 0; i < depth_; i++) {
     size_t j = hash_functions_[i](item);
     size_t index = i * width_ + j;
     uint32_t count = table_[index].load(std::memory_order_relaxed);
